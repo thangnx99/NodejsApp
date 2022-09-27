@@ -11,15 +11,11 @@ let initWebRoutes = (app) => {
     router.post('/post-crud', homeController.postCRUD);
     router.get('/get-crud', homeController.displayGetCRUD);
     router.get('/edit-crud', homeController.getEditCRUD);
-
     router.post('/put-crud', homeController.putCRUD);
     router.get('/delete-crud', homeController.deleteCRUD);
-
     router.post('/api/login', userController.handleLogin);
+    router.get('/api/get-all-users', userController.handleGetAllUsers)
 
-    router.get('/hoi', (req, res) => {
-        return res.send("Hello Thang lan 2")
-    });
 
 
     return app.use("/", router);
